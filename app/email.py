@@ -1,22 +1,11 @@
-import urllib.request, json
-from .models import Quote
+from flask_mail import Message
+from flask import render_template
+from . import mail
 
-base_url = "http://quotes.stormconsultancy.co.uk/random.json"
+def mail_message(subject,template,to,**kwargs):
+    sender_email = 'codesrunner@gmail.com'
 
-
-def get_quote():
-    get_quote_url = base_url.format()
-
-    with urllib.request.urlopen(get_quote_url) as url:
-        quote_details_data = url.read()
-        quote_details_response = json.loads(quote_details_data)
-
-        quote_object = None
-        if quote_details_response:
-            author = quote_details_response.get('author')
-            quote = quote_details_response.get('quote')
-
-            quote_object = Quote(author,quote)
-            print(quote_object)
-            
-    return quote_object
+    email = Message(subject, sender=sender_email, recipients=[to])
+    email.body= render_template(template + ".txt",**kwargs)
+    email.html = render_template(template + ".html",**kwargs)
+    mail.send(email)
