@@ -1,22 +1,11 @@
-import urllib.request, json
-from .models import Quote
+from app.models import Blog, User, Comment
+from app import db
+def setUp(self):
+        self.client = User(username = 'John Doe',password = 'codes', email = 'user@gmail.com')
+        self.new_blog = Blog(id=1, title='Lets Talk Luxury Lifestyle', post='If you want Luxuries, come to Dubai' )
+        self.new_comment = Comment(comment = "Awesome", post_id = self.new_blog.id, user_id = self.client.id)
 
-base_url = "http://quotes.stormconsultancy.co.uk/random.json"
-
-
-def get_quote():
-    get_quote_url = base_url.format()
-
-    with urllib.request.urlopen(get_quote_url) as url:
-        quote_details_data = url.read()
-        quote_details_response = json.loads(quote_details_data)
-
-        quote_object = None
-        if quote_details_response:
-            author = quote_details_response.get('author')
-            quote = quote_details_response.get('quote')
-
-            quote_object = Quote(author,quote)
-            print(quote_object)
-            
-    return quote_object
+def test_instance(self):
+        self.assertTrue(isinstance(self.user_Moh, User))
+        self.assertTrue(isinstance(self.new_blog, Blog))
+        self.assertTrue(isinstance(self.new_comment, Comment))
