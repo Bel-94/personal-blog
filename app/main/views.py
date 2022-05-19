@@ -12,8 +12,7 @@ from datetime import datetime
 @main.route('/')
 def index():
 
-    title = 'Welcome to Millennial Blogs'
-    # date = Blog.query.get("date_posted")
+    title = 'Welcome to Your~Blogr!!'
     blogs = Blog.query.all()
     random_quote = get_quote()
 
