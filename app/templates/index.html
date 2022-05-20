@@ -24,15 +24,15 @@
   <body>
     {% block content%}
 
-    <div class="jumbotron jumbotron-fluid" style="height: 500px; background-image: url('https://images.unsplash.com/photo-1651761129862-13beec5afece?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'); background-repeat: no-repeat; background-size: 100% 500px;">
-      <h1 class="display-4" style="font-size: 80px; font-weight: 700; text-shadow: white; ">Welcome to Your~Blogr!</h1>
-      <p class="lead intro-p" style="font-size: 25px; font-weight: 500;" >We smash you with the information that will make your life easier. Really.</p>
+    <div class="jumbotron jumbotron-fluid" style="height: 500px; background-color: #e3e2df; background-repeat: no-repeat; background-size: 100% 500px;">
+      <h1 class="display-4" style="font-size: 80px; font-weight: 700; text-shadow: white; color: #5d001e;">Welcome to Your~Blogr!</h1>
+      <p class="lead intro-p" style="font-size: 25px; font-weight: 500; color: black;" >We smash you with the information that will make your life easier. Really.</p>
       <br><br><br>
-      <hr class="my-4" style="height: 10px; width: 80%; background-color: #12395d">
+      <hr class="my-4" style="height: 10px; width: 80%; background-color: #8d8741">
       <br><br><br><br><br>
       <p class="lead">
         {% if current_user.is_authenticated %}
-        <a class="btn btn-primary btn-lg" id="start-btn" href="{{url_for('main.new_blog')}}" role="button">LET'S GET STARTED.</a>
+        <a class="btn  btn-md" id="start-btn" href="{{url_for('main.new_blog')}}" role="button">LET'S GET STARTED.</a>
         {% else %}
         <a class="btn btn-primary btn-lg" style="margin:30px ;" id="start-btn" href="{{url_for('auth.register')}}" role="button">LET'S GET STARTED.</a>
         <div class="content-section mt-4">
@@ -46,14 +46,14 @@
       </p>
     </div>
 
-    <div class="container" >
-      <h2 class="text-center" style="color:#1d5c96; font-size: 30px; font-weight: 500;">Quotes of the day</h2>
+    <div class="container" style="background-color: #e3e2df" >
+      <h2 class="text-center" style="color:#5d001e; font-size: 30px; font-weight: 500;">Quotes of the day</h2>
 			<figure class="text-center">
 				<blockquote class="blockquote">
-					<p style="color: black; font-size: 25px; font-style: italic; font-weight: 300;"> <i class="fas fa-quote-left" style="color:#12395d;" ></i> <em>{{quote.quote}}</em> <i class="fas fa-quote-right" style="color: #12395d;" ></i></p>
+					<p style="color: #ee4c7c; font-size: 25px; font-style: italic; font-weight: 300;"> <i class="fas fa-quote-left" style="color:#5d001e;" ></i> <em>{{quote.quote}}</em> <i class="fas fa-quote-right" style="color: #5d001e;" ></i></p>
 				</blockquote>
 				<figcaption class="blockquote-footer">
-					<cite title="Source Title" style="color: blue; font-size: 30px; font-style: italic; font-weight: 200;" > ~{{quote.author}}</cite>
+					<cite title="Source Title" style="color: #5d001e; font-size: 30px; font-style: italic; font-weight: 200;" > ~{{quote.author}}</cite>
 				</figcaption>
 			</figure>
 		</div>

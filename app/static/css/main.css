@@ -1,5 +1,5 @@
-body{
-    background-color: #7db0de;
+/* body{
+    background-color: #8d8741;
     color:#1d5c96 ;
     text-align: center;
 }
@@ -30,4 +30,12 @@ body{
     font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+#name {
+    color: aquamarine;
+} */
+
+h1 {
+    color: #5d001e;
 }
